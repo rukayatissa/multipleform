@@ -1,0 +1,160 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  height:100px;
+ padding-top:10px;
+ padding-bottom: 10px;
+ margin-bottom: 0px;
+}
+
+
+#regForm {
+  background-color: #0B4A2F;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 50px;
+  width: 50%;
+  min-width: 300px;
+  border-radius:10px;
+  padding-top: 0px;
+  margin-top: 10px;
+}
+
+h2 {
+  text-align: center; 
+  color: white;
+  border-radius: 2px;
+  width:auto;
+  /* background-color:#B1C502; */
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 10px;
+}
+  h3{
+    text-align:center;
+    margin: 0px;
+    color:white;
+  }
+
+  h4{
+    text-align:left;
+    margin: 0px;
+    color:white;
+  }
+  h5{
+    text-align:center;
+    margin: 0px;
+    color:white;
+  }
+  div h3, .display{
+    display:none;
+  }
+ 
+  #category{
+    color:white;
+  }
+
+
+label { 
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2px;
+  margin: 2px;  
+}
+
+/* input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+} */
+input{
+  font-family: Raleway;
+  font-size:16px;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+select.invalid {
+  background-color: #ffdddd !important;
+}
+label.important:after{
+  content:" *";
+  color:red;
+  font-weight:bold;
+}
+label.Optional:after{
+  content:"";
+}
+label.upload:after{
+  content:  "(File should not exceed 100kb)";
+  color:red;
+}
+  /*font-weight:light;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+ 
+button {
+  background-color: #B1C502;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #B1C502;
+}
+.prevBtn {
+  background-color: #B1C502;
+}
+.nextBtn:hover {
+  opacity: 0.8;
+}
+.nextBtn{
+  background-color: #B1C502;
+  cursor: pointer;
+}
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
