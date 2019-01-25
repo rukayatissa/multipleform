@@ -216,12 +216,20 @@ $data.='<p><span>nameposition2:&nbsp;</span><span>'.$_POST["nameposition2"].'</s
 $data.='<p><span>Datefrom:&nbsp;</span><span>'.$_POST["Datefrom"].'</span></p>';
 $data.='<p><span>Dateto:&nbsp;</span><span>'.$_POST["Dateto"].'</span></p>';
 
-var_dump($_FILES);
+//var_dump($_FILES);
 $errors= array();
 $fileuploaderror=false;
 $uploaded_filenames=array();
 $expensions= array("jpeg","jpg","png","pdf");
 
+function fileuploaderrormsgs($errorcode){
+switch ($errorcode){
+  case '4':
+  return "file is not uploaded";
+  break;
+}       
+
+}
 if($_FILES['signature'] && $_FILES['signature']['error']==0){
   
   $file_name = $_FILES['signature']['name'];
@@ -249,6 +257,7 @@ if($_FILES['signature'] && $_FILES['signature']['error']==0){
 }
 else{
   $fileuploaderror=true;
+  $errors[]=fileuploaderrormsgs($_FILES['signature']['error']);
 }
 
 if($_FILES['PassportPhotograph'] && $_FILES['PassportPhotograph']['error']==0){
@@ -273,6 +282,7 @@ if($_FILES['PassportPhotograph'] && $_FILES['PassportPhotograph']['error']==0){
      $uploaded_filenames[]=$file_name;
   }else{
      print_r($errors);
+     $errors[]=fileuploaderrormsgs($_FILES['PassportPhotograph']['error']);
   }
 }
 
@@ -307,6 +317,7 @@ if($_FILES['bill']&& $_FILES['bill']['error']==0){
 
 else{
   $fileuploaderror=true;
+  $errors[]=fileuploaderrormsgs($_FILES['bill']['error']);
 }
 
 if($_FILES['meansofId']&& $_FILES['meansofId']['error']==0){
@@ -334,8 +345,14 @@ if($_FILES['meansofId']&& $_FILES['meansofId']['error']==0){
 
 else{
   $fileuploaderror=true;
+  $errors[]=fileuploaderrormsgs($_FILES['meansofId']['error']);
 }
+if(count($errors)<=0){
 
+
+
+
+  
 
 //                     $html = <<<EOD
 // <h1>Welcome to <a href="http://www.tcpdf.org" style="text-decoration:none;background-color:#CC0000;color:black;">&nbsp;<span style="color:black;">TC</span><span style="color:white;">PDF</span>&nbsp;</a>!</h1>
@@ -438,8 +455,16 @@ $pdf->writeHTML($data,true, 0);
                     //echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
                   }
                   }
-      
+        
+                }
                 ?>
+                <?php if(count($errors)>0)) { 
+
+                  
+                  echo "Message could not be sent. Mailer Error";
+                
+                
+            }?>
 
                 <?php if(isset($_POST['error'])) { echo "Message could not be sent. Mailer Error";}else{ echo "";} ?>
                 
