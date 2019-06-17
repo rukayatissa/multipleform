@@ -4,6 +4,7 @@
                   <title>CORPORATE ACCOUNT</title>
                   <meta charset="utf-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1">
+                  <meta name="description" content="this is a multiform">
                   <link rel="stylesheet" href="../css/bootstrap.min.css"type="text/css">
                  <!-- <link rel="stylesheet" href="../css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> --> 
                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -386,7 +387,7 @@ $data.='<p><span>InvestmentandFinancial:&nbsp;</span><span>'.$_POST['Investmenta
                 <label for="name">Source of Investment Fund</label>
               <input name="SourceofInvestmentFund" id="lname" class="form-control inp" value="<?php echo $_POST['SourceofInvestmentFund']?>">
                           <br>
-            <h5>Bank Account Details (Same as CSCS Account Name)</h5>
+            <h5>Bank Account Details02 (Same as CSCS Account Name)</h5>
             <label for="name">Bank Name</label>
               <input name="BankName" id="lname" class="form-control inp" value="<?php echo $_POST['BankName']?>">
               <label for="name">Branch</label>
